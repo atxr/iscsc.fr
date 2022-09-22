@@ -5,7 +5,7 @@ const { createServer } = require('http');
 const userRoutes = require('./routes/users');
 const articleRoutes = require('./routes/articles');
 const httpServer = createServer(app);
-require('dotenv/config');
+require('dotenv').config({path: './config/.env'});
 
 app.use(express.json());
 app.use('/api/users', userRoutes);
