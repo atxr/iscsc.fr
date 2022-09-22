@@ -44,10 +44,10 @@ From the root directory of the repository, do the following:
 ```bash
 cd backend
 npm install
-cp .env.example .env
+cp config/.env.example config/.env.deploy
 ```
 
-After copying the example config of `.env`, you must fill in the missing information in this file:
+After copying the example config of `.env.deploy`, you must fill in the missing information in this file:
 - The port to deploy the backend
 - The database name
 - The credential for the database
@@ -59,15 +59,19 @@ If you don't know how to deploy your database, consider using [Atlas](https://ww
 > #### Notes for the iScsc members:
 > To access the official iScsc database, send me a message and I'll send you back a crypted version of the official `.env`.
 
- To deploy the server once your `.env` is ready, run 
+ To deploy the server once your `.env.deploy` is ready, run this command in the `backend` directory
 ```bash
-node .
+npm run start
 ```
 
 If everything is good, the application should output:
 ```
 Server listening: http://localhost:<PORT>
 ```
+
+> #### Dev mode
+> A dev mode is available to avoid mixing the real database with the staging application. To use the dev mode, create a new config file `backend/config/.env.dev` and provide the required information. 
+> To deploy the backend in dev mode, run `npm run dev`
 
 ### Frontend
 From the root directory of the repository, do the following:
