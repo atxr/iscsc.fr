@@ -4,6 +4,8 @@
   "description": "Backend of the iscsc.fr website",
   "main": "app.js",
   "scripts": {
+    "start": "echo \"Starting in deploy mode\" && rm config/.env && cp config/.env.deploy config/.env && nodemon",
+    "dev": "echo \"Starting in dev mode\" && rm config/.env && cp config/.env.dev config/.env && nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexandre Tullot",
