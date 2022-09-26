@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ArticlePreview from "../../components/ArticlePreview";
 import { useArticlesContext } from "../../hooks/useArticlesContext";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Profile = () => {
   const { articles, dispatch } = useArticlesContext();
