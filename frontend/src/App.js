@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Blog from "./pages/blog/Blog";
+import Profile from "./pages/blog/Profile";
 import Navbar from "./components/Navbar";
 import CreateArticle from "./pages/blog/CreateArticle";
 import Article from "./pages/blog/Article";
@@ -21,6 +22,10 @@ function App() {
               path="/blog/create-article"
               element={user ? <CreateArticle /> : <Navigate to="/login" />}
             />
+	    <Route 
+	      path="/blog/profile" 
+	      element={user ? <Profile /> : <Navigate to="/login" />}
+	    />
             <Route path="/blog/:id" element={<Article />} />
             <Route
               path="login"
